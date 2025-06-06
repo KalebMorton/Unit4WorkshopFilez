@@ -1,5 +1,6 @@
 import db from "#db/client";
-import { CreateFolder, CreateFile } from "./queries.js";
+import { createFile } from "./queries/fileQueries.js";
+import { createFolder } from "./queries/folderQueries.js";
 
 await db.connect();
 await seed();
@@ -7,25 +8,25 @@ await db.end();
 console.log("🌱 Database seeded.");
 
 async function seed() {
-  await CreateFolder("Homework")
-  await CreateFolder("Vacation Pictures")
-  await CreateFolder("ICBM Launch Codes")
+  await createFolder("Homework")
+  await createFolder("Vacation Pictures")
+  await createFolder("ICBM Launch Codes")
 
-  await CreateFile("English Paper.pdf", 19, 1)
-  await CreateFile("Math Worksheet.pdf", 19, 1)
-  await CreateFile("Science Experiment Results.pdf", 19, 1)
-  await CreateFile("Social Studies Essay.pdf", 19, 1)
-  await CreateFile("Manifesto.txt", 19, 1)
+  await createFile("English Paper.pdf", 19, 1)
+  await createFile("Math Worksheet.pdf", 22, 1)
+  await createFile("Science Experiment Results.pdf", 25, 1)
+  await createFile("Social Studies Essay.pdf", 31, 1)
+  await createFile("Manifesto.txt", 154, 1)
 
-  await CreateFile("Hawaii.png", 19, 2)
-  await CreateFile("Canada.png", 19, 2)
-  await CreateFile("Goverment Facility.tiff", 19, 2)
-  await CreateFile("Italy.png", 19, 2)
-  await CreateFile("Australia.png", 19, 2)
+  await createFile("Hawaii.png", 101, 2)
+  await createFile("Canada.png", 97, 2)
+  await createFile("Goverment Facility.tiff", 2098, 2)
+  await createFile("Italy.png", 114, 2)
+  await createFile("Australia.png", 107, 2)
 
-  await CreateFile("SILO_1.txt", 19, 3)
-  await CreateFile("SILO_2.txt", 19, 3)
-  await CreateFile("SILO_3.txt", 19, 3)
-  await CreateFile("SILO_4.txt", 19, 3)
-  await CreateFile("SILO_5.txt", 19, 3)
+  await createFile("SILO_1.txt", 8236, 3)
+  await createFile("SILO_2.txt", 9058, 3)
+  await createFile("SILO_3.txt", 8955, 3)
+  await createFile("SILO_4.txt", 9121, 3)
+  await createFile("SILO_5.txt", 9001, 3)
 }
